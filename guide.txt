@@ -1,0 +1,71 @@
+libs -:
+- re ->regular expressions
+- pandas
+- numpy 
+- matplotlib
+- seaborn
+- string 
+- nltk -> text manipulation
+- wordcloud
+- warnings
+- tfidvectorizer, countvectorizer
+- gensim
+- logistic regression, train_test_split, f1_score
+
+* pandas series object is similar to 1D array but it has an explicitly deifned index which can be numeric or characters
+ 
+*sentiment analysis - process of computationally indentifying and categorizing opinions from text and determine writer's attitude.
+
+*tokenization - dividing a para into different set of statements, dividing a statement into different set of words.
+
+*cleaning - removing special chars and any irrelevant chars from the tokenized data.
+
+*remove stop words - words that dont add value to analytics. ex - he, she, the, was etc.
+
+*classify words as positive or negative using ml (trained on a bag of words or lexicons{set of predefined words})
+
+*label - 1 represents sexist/racist tweets and 0 represents non sexist/racist tweets in datasets
+
+*regex used -> \w - Returns a match where the string contains any word characters (characters from a to Z, digits from 0-9, and the underscore _ character)
+	       [] - A set of characters
+
+*The pattern [^a-zA-Z#] matches any character in the string that is NOT an English letter (uppercase or lowercase) or the "#" symbol
+	^ -> denotes negation in str.replace() method, meaning it matches any character that is NOT in the character class.
+
+* lambda x: ' '.join([w for w in x.split() if len(w)>3]))  -> splitting each tweet into individual words, filtering out words with a length less than or equal to 3, and then joining the filtered words back together to form a new string.
+							   -> x.split() -> splits words in each list el using space deliminator
+							   -> if len(w)>3 - only words with len greater than 3 
+							   -> ' '.join -> joins words with space separator	
+
+*nltk - Natural language toolkit. Used for nlp and provides various stemming methods.
+
+*stemming - reducing words to their base form for easy text analysis. ex-recommended to recommend. This is used in natural language processing. 
+
+*common stemmers provided by nltk lib - PorterStemmer (uses algo developed by Porter), SnowBallStemmer(supports multiple langs), LancasterStemmer(algo provides multiple stemmed outputs)
+
+*FreqDist is class in nltk that is used for calculating frequency distribution of any iterable. Can output frequency of occurence of each word, output max freq word etc.
+
+*Tfidvectorizer, countvectorizer - These classes are used for converting text data into numerical feature vectors, which can be fed into machine learning models for various NLP tasks.
+	countvectorizer - CountVectorizer is a simple method for converting text documents into a numerical feature matrix, where each row represents a document, and each column represents a word (or token) in the document.
+	tfidvectorizer -  similar to CountVectorizer, but instead of using the raw term frequency, it computes a numerical value for each word based on its importance in the document. TF-IDF = (Term Frequency) * (Inverse Document Frequency)
+
+*parameters - max_df=0.90: This parameter sets the threshold for ignoring words that appear in more than 90% of the documents.
+	      min_df=2: This parameter sets the threshold for ignoring words that appear in less than 2 documents.
+	      stop_words='english': This parameter specifies that the built-in English stop words should be removed from the documents before creating the vocabulary. 
+	      max_features=1000: This parameter limits the size of the vocabulary to the top 1000 most frequent words in the collection of documents. 
+
+*Word2Vec - Word embedding is a technique used to represent words or phrases as dense vectors of real numbers, where each word is mapped to a continuous vector space. 
+	  - Gensim provides an implementation of Word2Vec that allows you to train word embeddings on your own text corpus. 
+	  - model_w2v is trained on the tweets using skip-gram to form the word embedding and extract useful relations amongst the words. 
+	    - Gensim's Word2Vec feature allows you to train your own word embeddings using either the skip-gram or CBOW (Continuous Bag of Words) model. 
+	    - 'sg = 1' for using skip-gram technique
+   	    - 'vector_size=100' for 100 dimensional word embedding
+
+*Logistic Regression - working algo
+*XGBoost             - working algo
+
+
+
+
+
+	
